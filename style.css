@@ -94,10 +94,14 @@ a{
 }
 
 .flags{
-    background:url(./images/Flag-Nigeria.jpg) no-repeat center center/cover;
-    height: 45%;
+   height: 45%;
+}
+.flags img{
+    height: 100%;
+    width: 100%;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
+
 }
 .details{
     height: 55%;
