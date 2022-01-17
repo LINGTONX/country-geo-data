@@ -213,20 +213,35 @@ a{
         width: 100%;
         gap: 2rem;
     }
+    .filterSelect{
+        padding: 1.3rem 4rem 1.3rem 2rem;
+    }
     .lg-flag{
         width: 90%;
         height: 17rem;
 
     }
+    /* .countries{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    } */
+.countryCard{
+    width: 70%;
+    height: 30rem;
+}
+
     .nationsInfo{
         width: 90% !important;
         margin:0;
         padding-left: unset !important;
+        
     }
 
     .borders{
         flex-direction: column;
         align-items: unset;
+        gap: unset;
     }
     .borderCountry{
         display: grid;
@@ -236,8 +251,9 @@ a{
   
     .info-content{
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
         width: 100%;
+        padding: 0 0;
     }
     .info-details1, .info-details2{
         width: 100%;
