@@ -190,7 +190,7 @@ a{
     box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0.4rem;
     font-size: 16px;
-    margin-left: 1rem;
+   
 }
 .borders{
 
@@ -260,12 +260,15 @@ a{
         flex-direction: column;
         align-items: unset;
         gap: unset;
+        justify-content: unset;
     }
     .borderCountry{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        margin: 0 auto;
+        gap: 0.5rem;
+        
     }
+
   
     .info-content{
         flex-direction: column;
@@ -278,11 +281,16 @@ a{
     }
     .info-details1 h5, .info-details2 h5{
         line-height: 1.3rem;
+        padding: 0 0 1rem 0 ;
     }
     .align {
         padding: 2rem 0;
     }
     .backbtn{
         margin-left: 2rem;
+    }
+   
+    .align{
+        margin-left: 0;
     }
 } 

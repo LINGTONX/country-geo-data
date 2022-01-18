@@ -28,7 +28,7 @@ const RenderCard = (array)=>{
     <div class="nationsInfo">
         <div class="align"><h2>${el.name}</h2></div>
         <div class="info-content">
-            <div class="info-details1 details">
+            <div class="info-details1 details ">
                 <h5>Native Name: <span>${el.nativeName}</span></h5>
                 <h5>Population: <span>${el.population}</span></h5>
                 <h5>Region: <span>${el.region}</span></h5>
