@@ -11,7 +11,7 @@
 }
 
 .container{
-    max-width: 1700px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 body{
@@ -76,8 +76,8 @@ a{
 .countries{
     margin: 3rem auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px,1fr) );
-    gap: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem,1fr) );
+    gap: 2rem;
     
 
 }
@@ -183,6 +183,7 @@ a{
     width: 50%;
 }
 
+
 .borderCountry button{
     padding: 0.4rem 2rem;
     border: none;
@@ -192,10 +193,23 @@ a{
     margin-left: 1rem;
 }
 .borders{
+
     display: flex;
     gap: 1rem;
     align-items: center;
+    width:100%;
+    justify-content: space-between;
    
+}
+.borderCountry{
+    /* border: 1px solid red; */
+    width:65%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.align{
+    width:fit-content;
 }
 
 @media (max-width:667px){

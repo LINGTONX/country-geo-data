@@ -5,17 +5,25 @@ const _ = (string) => {
 const Countries = _('#countries')
 const inputs = document.getElementsByTagName('input')[0]
 const Search = document.getElementById("Search")
+const CountryCards = document.querySelectorAll('.countryCard')
 const Region = document.getElementById("Region")
-console.log(Region)
+
 
 
 //fetching data
 
  window.addEventListener('DOMContentLoaded',()=>{
+
+
     fetch('https://restcountries.com/v2/all')
     .then(res=> res.json())
     .then(data => {
         RenderCard(data)
+        Countries.addEventListener('click', (e)=>{
+            if([...e.target.parentElement.classList].includes('details') || [...e.target.parentElement.classList].includes('flags')){
+                localStorage.setItem('country',e.target.parentElement.parentElement.id)
+            }
+        })
         inputs.addEventListener("keyup", (e)=>{   
             const SearchedItems = []
             data.map(el=> {
@@ -33,6 +41,7 @@ console.log(Region)
 
               })
               RenderCard(countryRegion)
+           
         })
 
 
@@ -41,26 +50,31 @@ console.log(Region)
     
  })
 
+ const handleClick = (e)=>{
+   console.log(e, 'yes')
+ }
 
  
 const RenderCard = (array)=>{
     const arr = array.map((el)=>{
         return  `
-        <a href="./country-details.html">
-        <div  class="countryCard">
-            <div class="flags">
+        <a href="country-details.html">
+  
+        <div  class="countryCard" id=${el.name} >
+            <span class="flags">
             <img src="${el.flag}" alt="country flags">
-            </div>
-            <div class="details">
+            </span>
+            <span class="details">
                 <h3 title=${el.name}>${el.name.length > 14?el.name.slice(0,17) + '...':el.name}</h3>
                 <h5>Population: <span> ${el.population} </span></h5>
                 <h5>Region: <span>${el.region}</span></h5>
                 <h5>Capital: <span>${el.capital}</span></h5>
-            </div>
+            </span>
         </div>
         </a>
         `
     }).join("")
     Countries.innerHTML = arr 
+
 }
 
