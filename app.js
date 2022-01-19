@@ -24,10 +24,12 @@ const Region = document.getElementById("Region")
                 localStorage.setItem('country',e.target.parentElement.parentElement.id)
             }
         })
-        inputs.addEventListener("keyup", (e)=>{   
+        inputs.addEventListener("keyup",  ({target}) => {
+            const { value} = target   
+            const searchVal = value.toLowerCase()
             const SearchedItems = []
             data.map(el=> {
-                el.name.toLowerCase().includes(e.target.value) ? SearchedItems.push(el):null    
+                el.name.toLowerCase().includes(searchVal) ? SearchedItems.push(el):null    
             })
             RenderCard(SearchedItems)
         })
