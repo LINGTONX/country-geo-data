@@ -28,10 +28,10 @@ function numberWithCommas(x) {
         })
         inputs.addEventListener("keyup",  ({target}) => {
             const { value} = target   
-            const searchVal = value.toLowerCase()
+            const searchVal = value.toLowerCase().trim()
             const SearchedItems = []
             data.map(el=> {
-                el.name.toLowerCase().includes(searchVal) ? SearchedItems.push(el):null    
+                el.name.toLowerCase().trim().includes(searchVal) ? SearchedItems.push(el):null    
             })
             RenderCard(SearchedItems)
         })
