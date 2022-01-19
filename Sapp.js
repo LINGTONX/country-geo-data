@@ -1,5 +1,9 @@
 const nationsDetail = document.getElementById('nations-details')
 
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 window.addEventListener('DOMContentLoaded',()=>{
 
 
@@ -30,7 +34,7 @@ const RenderCard = (array)=>{
         <div class="info-content">
             <div class="info-details1 details ">
                 <h5>Native Name: <span>${el.nativeName}</span></h5>
-                <h5>Population: <span>${el.population}</span></h5>
+                <h5>Population: <span>${numberWithCommas(el.population)}</span></h5>
                 <h5>Region: <span>${el.region}</span></h5>
                 <h5>Sub Region: <span>${el.subregion}</span></h5>
                 <h5>Capital: <span>${el.capital}</span></h5>

@@ -9,7 +9,9 @@ const CountryCards = document.querySelectorAll('.countryCard')
 const Region = document.getElementById("Region")
 
 
-
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 //fetching data
 
  window.addEventListener('DOMContentLoaded',()=>{
@@ -68,7 +70,7 @@ const RenderCard = (array)=>{
             </span>
             <span class="details">
                 <h3 title=${el.name}>${el.name.length > 14?el.name.slice(0,17) + '...':el.name}</h3>
-                <h5>Population: <span> ${el.population} </span></h5>
+                <h5>Population: <span> ${numberWithCommas(el.population)} </span></h5>
                 <h5>Region: <span>${el.region}</span></h5>
                 <h5>Capital: <span>${el.capital}</span></h5>
             </span>
