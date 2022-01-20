@@ -67,3 +67,6 @@ const RenderCard = (array)=>{
     nationsDetail.innerHTML = arr 
 
 }
+function toggle(){
+    document.body.classList.add('darkMode')
+}

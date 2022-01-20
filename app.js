@@ -82,3 +82,7 @@ const RenderCard = (array)=>{
 
 }
 
+
+function toggle(){
+    document.body.classList.add('darkMode')
+}
