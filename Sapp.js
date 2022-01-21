@@ -5,7 +5,12 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 window.addEventListener('DOMContentLoaded',()=>{
-
+    const darkMode = localStorage.getItem('darkmode')
+     if(darkMode){
+        toggle()
+      }else{
+        document.body.classList.remove('darkMode') 
+      }
 
     fetch('https://restcountries.com/v2/all')
     .then(res=> res.json())
@@ -17,6 +22,7 @@ window.addEventListener('DOMContentLoaded',()=>{
      
       
     })
+
     
  })
 
@@ -67,6 +73,7 @@ const RenderCard = (array)=>{
     nationsDetail.innerHTML = arr 
 
 }
+
 function toggle(){
     document.body.classList.add('darkMode')
 }

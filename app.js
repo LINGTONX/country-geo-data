@@ -7,6 +7,7 @@ const inputs = document.getElementsByTagName('input')[0]
 const Search = document.getElementById("Search")
 const CountryCards = document.querySelectorAll('.countryCard')
 const Region = document.getElementById("Region")
+const dlMode = document.querySelector('#dlmode')
 
 
 function numberWithCommas(x) {
@@ -15,8 +16,22 @@ function numberWithCommas(x) {
 //fetching data
 
  window.addEventListener('DOMContentLoaded',()=>{
+     let darkMode = false
 
-
+     dlMode.addEventListener('click',()=>{
+       
+        //  darkMode?toggle(false):toggle(true)
+         if(darkMode === false){
+            toggle()
+            darkMode = true
+         }else{
+             toggleback()
+            darkMode = false
+         }
+     }) 
+  
+     
+   
     fetch('https://restcountries.com/v2/all')
     .then(res=> res.json())
     .then(data => {
@@ -54,9 +69,7 @@ function numberWithCommas(x) {
     
  })
 
- const handleClick = (e)=>{
-   console.log(e, 'yes')
- }
+
 
  
 const RenderCard = (array)=>{
@@ -85,4 +98,8 @@ const RenderCard = (array)=>{
 
 function toggle(){
     document.body.classList.add('darkMode')
+}
+
+function toggleback(){
+   document.body.classList.remove('darkMode')
 }
